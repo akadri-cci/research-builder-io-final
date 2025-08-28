@@ -7,22 +7,20 @@ interface GreetingCardProps {
 
 const GreetingCard = ({ name, balance }: GreetingCardProps) => {
   return (
-    <div className="bg-white border border-[#E2E8F0] rounded-md p-6 shadow-sm">
-      <div className="space-y-6">
-        {/* Header with greeting and menu */}
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-4">
-            <span className="text-3xl">👋</span>
-            <h2 className="text-2xl font-bold text-[#121212]">Hi {name}!</h2>
+    <div className="bg-white border border-[#E2E8F0] rounded-md shadow-sm">
+      <div className="p-4 lg:p-6">
+        <div className="flex items-start justify-between mb-1 lg:mb-6">
+          <div className="flex items-center gap-3">
+            <span className="text-lg lg:text-3xl">👋</span>
+            <h2 className="text-base lg:text-2xl font-semibold lg:font-bold text-[#121212] tracking-tight">Hi {name}!</h2>
           </div>
-          <button className="p-3 hover:bg-gray-100 rounded-full transition-colors">
-            <MoreHorizontal className="w-4 h-4 text-[#64748B]" />
+          <button className="p-2 lg:p-3 hover:bg-gray-100 rounded-full transition-colors">
+            <MoreHorizontal className="w-4 h-4 lg:w-4 lg:h-4 text-[#64748B]" />
           </button>
         </div>
         
-        {/* Balance */}
         <div>
-          <p className="text-3xl font-normal text-[#344055] tracking-tight">
+          <p className="text-lg lg:text-3xl font-normal text-[#121212] lg:text-[#344055] tracking-tight">
             ${balance.toLocaleString()}
           </p>
         </div>
