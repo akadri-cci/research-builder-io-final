@@ -7,7 +7,9 @@ const CreateWalletButton = () => {
         <button className="w-10 h-10 bg-[#4F46E5] rounded-full flex items-center justify-center hover:bg-[#4338CA] transition-colors">
           <Plus className="w-4 h-4 text-white" />
         </button>
-        <span className="text-xs lg:text-lg font-semibold lg:font-semibold text-[#4F46E5] tracking-tight">Create New Wallet</span>
+        <span className="text-xs lg:text-lg font-semibold lg:font-semibold text-[#4F46E5] tracking-tight">
+          Create New Wallet
+        </span>
       </div>
     </div>
   )
