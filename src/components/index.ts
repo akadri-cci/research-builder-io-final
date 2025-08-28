@@ -1,4 +1,8 @@
-// Export all shared components here
 export { Button } from './ui/Button'
 export { Card, CardHeader, CardTitle, CardContent } from './ui/Card'
 export { Chart } from './Chart'
+export { default as Layout } from './Layout'
+export { default as GreetingCard } from './GreetingCard'
+export { default as QuickActions } from './QuickActions'
+export { default as WalletCard } from './WalletCard'
+export { default as CreateWalletButton } from './CreateWalletButton'
