@@ -9,7 +9,6 @@ import {
   History,
   MessageSquare,
   Settings,
-  Bell,
 } from 'lucide-react'
 
 const Layout = () => {

@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import { ChevronDown, ChevronRight, ArrowRight, Bell, HelpCircle } from 'lucide-react'
+import { ChevronRight, ArrowRight, Bell, HelpCircle } from 'lucide-react'
 import { CreditCard, CardInfo, HelpList } from '../components'
 
 const Card = () => {
-  const [selectedCard, setSelectedCard] = useState('Primary Card')
+  const selectedCard = 'Primary Card'
 
   const handlePersonalizeClick = () => {
     console.log('Personalize account clicked')
