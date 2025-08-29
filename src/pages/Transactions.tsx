@@ -8,11 +8,7 @@ import {
   TransactionList
 } from '../components'
 import {
-  mockTransactions,
-  searchTransactions,
-  getTransactionsByPage,
-  getTotalTransactions,
-  type Transaction
+  searchTransactions
 } from '../data/mockTransactions'
 
 const RecentTransactions = () => {
