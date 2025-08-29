@@ -1,18 +1,19 @@
 import { useState } from 'react'
 import { Bell, HelpCircle } from 'lucide-react'
-import { 
-  InfoBanner, 
-  FilterDropdown, 
-  SummaryCard, 
-  FinanceChartGraph,
-  type FilterOption 
+import {
+  InfoBanner,
+  FilterDropdown,
+  SummaryCard,
+  FinanceChartGraph
 } from '../components'
-import { 
-  LifetimeIncomeIcon, 
-  LifetimeOutcomeIcon, 
-  BonusIncomeIcon 
+import {
+  LifetimeIncomeIcon,
+  LifetimeOutcomeIcon,
+  BonusIncomeIcon
 } from '../components/SummaryCard'
-import { defaultChartData, type ChartDataPoint } from '../components/FinanceChartGraph'
+import { defaultChartData } from '../components/FinanceChartGraph'
+import type { FilterOption } from '../components/FilterDropdown'
+import type { ChartDataPoint } from '../components/FinanceChartGraph'
 
 const FinanceChart = () => {
   // State for filters
