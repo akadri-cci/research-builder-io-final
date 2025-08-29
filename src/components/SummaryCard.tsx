@@ -14,18 +14,20 @@ const SummaryCard = ({
   className = "",
 }: SummaryCardProps) => {
   return (
-    <div className={`flex items-center gap-3 lg:gap-4 p-3 lg:p-4 bg-white border border-[#E2E8F0] rounded-md shadow-sm ${className}`}>
-      <div 
-        className="flex items-center justify-center w-12 h-12 rounded-md flex-shrink-0"
+    <div className={`flex items-center gap-3 lg:gap-4 p-2 lg:p-4 bg-white border border-[#E2E8F0] rounded-md shadow-sm ${className}`}>
+      <div
+        className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 rounded-md flex-shrink-0"
         style={{ backgroundColor: iconBackgroundColor }}
       >
-        {icon}
+        <div className="scale-75 lg:scale-100">
+          {icon}
+        </div>
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-sm text-[#79808A] mb-1">
+        <p className="text-xs lg:text-sm text-[#79808A] mb-1">
           {title}
         </p>
-        <p className="text-lg font-semibold text-[#344055] tracking-tight">
+        <p className="text-sm lg:text-lg font-semibold text-[#344055] tracking-tight">
           {value}
         </p>
       </div>
