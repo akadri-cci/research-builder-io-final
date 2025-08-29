@@ -117,22 +117,28 @@ const FinanceChartGraph = ({
         },
         chartOptions: {
           chart: {
-            height: 200,
-            spacing: [15, 15, 15, 15],
+            height: 160,
+            spacing: [10, 10, 10, 10],
           },
           yAxis: {
             labels: {
               style: {
-                fontSize: '10px',
+                fontSize: '8px',
               },
             },
-            tickAmount: 4,
+            tickAmount: 6,
           },
           xAxis: {
             labels: {
               style: {
-                fontSize: '10px',
+                fontSize: '8px',
               },
+              step: 2, // Show every other label on mobile
+            },
+          },
+          plotOptions: {
+            line: {
+              lineWidth: 2,
             },
           },
         },
