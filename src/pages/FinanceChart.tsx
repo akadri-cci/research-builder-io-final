@@ -82,7 +82,7 @@ const FinanceChart = () => {
       </div>
 
       {/* Main Content Header */}
-      <div className="px-4 lg:px-12 py-6 lg:py-9 bg-white">
+      <div className="hidden lg:block px-4 lg:px-12 py-6 lg:py-9 bg-white">
         <div className="max-w-2xl">
           <h1 className="text-2xl lg:text-3xl font-bold text-[#121212] leading-tight">
             Finance Chart
@@ -93,8 +93,8 @@ const FinanceChart = () => {
         </div>
       </div>
 
-      {/* Info Banner */}
-      <div className="px-4 lg:px-12 mb-6">
+      {/* Info Banner - Mobile at bottom, Desktop at top */}
+      <div className="hidden lg:block px-4 lg:px-12 mb-6">
         <InfoBanner
           message="Please remember to fill that data that required for your debit card"
           buttonText="Got it"
@@ -103,10 +103,10 @@ const FinanceChart = () => {
       </div>
 
       {/* Chart Section */}
-      <div className="px-4 lg:px-12 mb-6">
+      <div className="px-4 lg:px-12 mb-4 lg:mb-6">
         {/* Chart Header with Filters */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 gap-4">
-          <h2 className="text-lg lg:text-2xl font-semibold text-[#121212] tracking-tight">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 lg:mb-6 gap-2 lg:gap-4">
+          <h2 className="text-sm lg:text-2xl font-semibold text-[#121212] tracking-tight">
             Statistic
           </h2>
           
@@ -136,8 +136,8 @@ const FinanceChart = () => {
       </div>
 
       {/* Summary Cards */}
-      <div className="px-4 lg:px-12 pb-6 lg:pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+      <div className="px-4 lg:px-12 pb-4 lg:pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-6">
           {summaryData.map((item, index) => (
             <SummaryCard
               key={index}
@@ -148,6 +148,15 @@ const FinanceChart = () => {
             />
           ))}
         </div>
+      </div>
+
+      {/* Mobile Info Banner - Positioned at bottom like in Figma */}
+      <div className="lg:hidden px-4 pb-6">
+        <InfoBanner
+          message="Please remember to fill that data that required for your debit card"
+          buttonText="Got it"
+          onButtonClick={handleInfoBannerDismiss}
+        />
       </div>
     </div>
   )
