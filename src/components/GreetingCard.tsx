@@ -16,7 +16,7 @@ const GreetingCard = ({ name, balance }: GreetingCardProps) => {
               Hi {name}!
             </h2>
           </div>
-          <button className="p-2 lg:p-3 hover:bg-gray-100 rounded-full transition-colors">
+          <button aria-label="More options" className="p-2 lg:p-3 hover:bg-gray-100 rounded-full transition-colors">
             <MoreHorizontal className="w-4 h-4 lg:w-4 lg:h-4 text-[#64748B]" />
           </button>
         </div>
