@@ -41,7 +41,6 @@ const Contact = () => {
           <HelpCircle className="w-8 h-8 text-[#64748B]" />
         </div>
 
-
         {/* Success Message */}
         <div className="px-4 lg:px-12 py-8 lg:py-16">
           <div className="max-w-md">
@@ -69,7 +68,6 @@ const Contact = () => {
         </div>
         <HelpCircle className="w-8 h-8 text-[#64748B]" />
       </div>
-
 
       {/* Main Header */}
       <div className="px-4 lg:px-12 py-6 lg:py-8 bg-white">

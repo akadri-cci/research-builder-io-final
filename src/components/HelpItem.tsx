@@ -7,7 +7,7 @@ interface HelpItemProps {
   className?: string
 }
 
-const HelpItem = ({ title, color, onClick, className = "" }: HelpItemProps) => {
+const HelpItem = ({ title, color, onClick, className = '' }: HelpItemProps) => {
   return (
     <div className={`relative ${className}`}>
       {/* Colored Left Border */}
@@ -15,7 +15,7 @@ const HelpItem = ({ title, color, onClick, className = "" }: HelpItemProps) => {
         className="absolute left-0 top-3 w-1 h-12 rounded-r"
         style={{ backgroundColor: color }}
       />
-      
+
       {/* Content */}
       <button
         onClick={onClick}

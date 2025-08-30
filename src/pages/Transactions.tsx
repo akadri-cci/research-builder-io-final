@@ -5,11 +5,9 @@ import {
   Pagination,
   DownloadButton,
   TransactionTable,
-  TransactionList
+  TransactionList,
 } from '../components'
-import {
-  searchTransactions
-} from '../data/mockTransactions'
+import { searchTransactions } from '../data/mockTransactions'
 
 const RecentTransactions = () => {
   // State management
@@ -47,8 +45,12 @@ const RecentTransactions = () => {
   const handleDownload = () => {
     // In a real application, this would generate and download an Excel file
     // For now, we'll simulate the download process
-    console.log('Downloading Excel file with', totalFilteredItems, 'transactions')
-    
+    console.log(
+      'Downloading Excel file with',
+      totalFilteredItems,
+      'transactions'
+    )
+
     // You could integrate with a library like SheetJS to generate actual Excel files
     // const wb = XLSX.utils.book_new()
     // const ws = XLSX.utils.json_to_sheet(filteredTransactions)
@@ -65,7 +67,6 @@ const RecentTransactions = () => {
         </div>
         <HelpCircle className="w-8 h-8 text-[#64748B]" />
       </div>
-
 
       {/* Main Header */}
       <div className="px-4 lg:px-12 py-6 lg:py-8 bg-white">
@@ -88,15 +89,13 @@ const RecentTransactions = () => {
       {/* Transactions Content */}
       <div className="relative">
         {/* Desktop Table View */}
-        <TransactionTable 
+        <TransactionTable
           transactions={paginatedTransactions}
           className="px-12"
         />
 
         {/* Mobile List View */}
-        <TransactionList 
-          transactions={paginatedTransactions}
-        />
+        <TransactionList transactions={paginatedTransactions} />
 
         {/* Download Button - Desktop Only */}
         <div className="hidden lg:block px-12 py-6">
