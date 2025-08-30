@@ -20,7 +20,7 @@ const Card = () => {
 
       {/* Mobile Header */}
       <div className="lg:hidden px-4 py-4 bg-white">
-        <h1 className="text-lg font-bold text-[#121212]">My Wallet</h1>
+        <h1 className="text-lg font-bold text-[#121212]">My Card</h1>
         <p className="text-xs text-[#5B6776] mt-1">
           Keep track your financial plan
         </p>
