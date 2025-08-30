@@ -1,12 +1,12 @@
 const QuickActions = () => {
   return (
-    <div className="bg-white border border-[#E2E8F0] rounded-md shadow-sm lg:shadow-sm">
-      <div className="p-3 lg:p-6">
-        <div className="flex items-center justify-between gap-6 h-full">
-          {/* Send Payment */}
-          <div className="flex flex-col items-center gap-2 flex-1">
-            <div className="w-10 h-10 lg:w-16 lg:h-16 bg-[#F7F8FD] rounded-full flex items-center justify-center">
-              <div className="relative w-6 h-6 lg:w-6 lg:h-6">
+    <div className="bg-white border border-[#E2E8F0] rounded-md shadow-sm lg:shadow-sm overflow-hidden">
+      {/* Use grid with divide-x so center line touches card borders */}
+      <div className="grid grid-cols-2 divide-x divide-[#E3E8EF]">
+        {/* Send Payment */}
+        <div className="flex flex-col items-center gap-2 p-4 lg:p-6">
+          <div className="w-10 h-10 lg:w-16 lg:h-16 bg-[#F7F8FD] rounded-full flex items-center justify-center">
+            <div className="relative w-6 h-6 lg:w-6 lg:h-6">
                 <svg
                   className="w-full h-full"
                   viewBox="0 0 24 24"
@@ -43,19 +43,15 @@ const QuickActions = () => {
                 </svg>
               </div>
             </div>
-            <span className="text-xs lg:text-sm font-semibold text-[#344055] text-center leading-tight">
-              Send a payment
-            </span>
-          </div>
+          <span className="text-xs lg:text-sm font-semibold text-[#344055] text-center leading-tight">
+            Send a payment
+          </span>
+        </div>
 
-          {/* Divider - only show on larger screens */}
-          <div className="hidden lg:block w-px h-20 bg-[#E3E8EF]"></div>
-          <div className="lg:hidden w-px h-20 bg-[#E3E8EF]"></div>
-
-          {/* Request Payment */}
-          <div className="flex flex-col items-center gap-2 flex-1">
-            <div className="w-10 h-10 lg:w-16 lg:h-16 bg-[#F7F8FD] rounded-full flex items-center justify-center">
-              <div className="relative w-6 h-6 lg:w-6 lg:h-6">
+        {/* Request Payment */}
+        <div className="flex flex-col items-center gap-2 p-4 lg:p-6">
+          <div className="w-10 h-10 lg:w-16 lg:h-16 bg-[#F7F8FD] rounded-full flex items-center justify-center">
+            <div className="relative w-6 h-6 lg:w-6 lg:h-6">
                 <svg
                   className="w-full h-full"
                   viewBox="0 0 24 24"
@@ -92,10 +88,9 @@ const QuickActions = () => {
                 </svg>
               </div>
             </div>
-            <span className="text-xs lg:text-sm font-semibold text-[#344055] text-center leading-tight">
-              Request a payment
-            </span>
-          </div>
+          <span className="text-xs lg:text-sm font-semibold text-[#344055] text-center leading-tight">
+            Request a payment
+          </span>
         </div>
       </div>
     </div>
