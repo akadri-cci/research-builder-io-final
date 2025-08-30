@@ -4,7 +4,7 @@ import {
   SelectDropdown,
   TextArea,
   PrimaryButton,
-  US_STATES
+  US_STATES,
 } from '../components'
 import { useContactForm, type ContactFormData } from '../hooks/useContactForm'
 
@@ -17,14 +17,14 @@ const Contact = () => {
     isSubmitted,
     handleInputChange,
     handleSubmit,
-    resetForm
+    resetForm,
   } = useContactForm(async (data: ContactFormData) => {
     // Here you would integrate with your API
     console.log('Submitting contact form:', data)
-    
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000))
+
     // You could integrate with Builder.io or other services here
     alert(`Thank you ${data.name}! Your message has been sent successfully.`)
   })
@@ -113,7 +113,11 @@ const Contact = () => {
       {/* Contact Form */}
       <div className="px-4 lg:px-12 pb-8 lg:pb-12">
         <div className="max-w-lg lg:max-w-[483px]">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8 lg:gap-[41px]" noValidate>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-8 lg:gap-[41px]"
+            noValidate
+          >
             {/* Name Field */}
             <InputField
               id="name"

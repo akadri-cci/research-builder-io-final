@@ -28,7 +28,7 @@ const initialFormData: ContactFormData = {
   name: '',
   email: '',
   state: '',
-  comment: ''
+  comment: '',
 }
 
 const validateEmail = (email: string): boolean => {
@@ -74,11 +74,11 @@ export const useContactForm = (
 
   const handleInputChange = useCallback(
     (field: keyof ContactFormData) => (value: string) => {
-      setFormData(prev => ({ ...prev, [field]: value }))
-      
+      setFormData((prev) => ({ ...prev, [field]: value }))
+
       // Clear error for this field when user starts typing
       if (errors[field]) {
-        setErrors(prev => ({ ...prev, [field]: undefined }))
+        setErrors((prev) => ({ ...prev, [field]: undefined }))
       }
     },
     [errors]
@@ -87,7 +87,7 @@ export const useContactForm = (
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault()
-      
+
       // Validate form
       const formErrors = validateForm(formData)
       setErrors(formErrors)
@@ -98,16 +98,16 @@ export const useContactForm = (
       }
 
       setIsLoading(true)
-      
+
       try {
         if (onSubmit) {
           await onSubmit(formData)
         } else {
           // Default submission behavior - simulate API call
-          await new Promise(resolve => setTimeout(resolve, 1500))
+          await new Promise((resolve) => setTimeout(resolve, 1500))
           console.log('Form submitted:', formData)
         }
-        
+
         setIsSubmitted(true)
         // Could reset form here if desired
         // resetForm()
@@ -135,6 +135,6 @@ export const useContactForm = (
     isSubmitted,
     handleInputChange,
     handleSubmit,
-    resetForm
+    resetForm,
   }
 }

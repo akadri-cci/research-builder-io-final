@@ -7,7 +7,8 @@ interface SelectOption {
   label: string
 }
 
-interface SelectDropdownProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface SelectDropdownProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label: string
   options: SelectOption[]
   placeholder?: string
@@ -67,39 +68,50 @@ export const US_STATES: SelectOption[] = [
   { value: 'WA', label: 'Washington' },
   { value: 'WV', label: 'West Virginia' },
   { value: 'WI', label: 'Wisconsin' },
-  { value: 'WY', label: 'Wyoming' }
+  { value: 'WY', label: 'Wyoming' },
 ]
 
 const SelectDropdown = forwardRef<HTMLSelectElement, SelectDropdownProps>(
-  ({ label, options, placeholder = "Select an option", error, required, className, ...props }, ref) => {
+  (
+    {
+      label,
+      options,
+      placeholder = 'Select an option',
+      error,
+      required,
+      className,
+      ...props
+    },
+    ref
+  ) => {
     const hasError = !!error
 
     return (
-      <div className={cn("flex flex-col gap-1", className)}>
+      <div className={cn('flex flex-col gap-1', className)}>
         {/* Label */}
-        <label 
+        <label
           htmlFor={props.id}
           className="text-[#121212] font-semibold text-sm leading-5"
         >
           {label}
           {required && <span className="text-[#D1493D] ml-1">*</span>}
         </label>
-        
+
         {/* Select Container */}
         <div className="relative">
           <select
             ref={ref}
             {...props}
             className={cn(
-              "flex w-full px-3 py-3 border rounded-md bg-white shadow-sm transition-colors appearance-none cursor-pointer",
-              "text-lg leading-6 tracking-[-0.36px]",
-              "focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-[#4F46E5]",
-              "disabled:cursor-not-allowed disabled:opacity-50",
-              hasError 
-                ? "border-[#B83F18] focus:ring-[#B83F18] focus:border-[#B83F18]" 
-                : "border-[#E2E8F0] hover:border-[#CBCFD5]",
+              'flex w-full px-3 py-3 border rounded-md bg-white shadow-sm transition-colors appearance-none cursor-pointer',
+              'text-lg leading-6 tracking-[-0.36px]',
+              'focus:outline-none focus:ring-2 focus:ring-[#4F46E5] focus:border-[#4F46E5]',
+              'disabled:cursor-not-allowed disabled:opacity-50',
+              hasError
+                ? 'border-[#B83F18] focus:ring-[#B83F18] focus:border-[#B83F18]'
+                : 'border-[#E2E8F0] hover:border-[#CBCFD5]',
               // Style for placeholder and selected values
-              props.value ? "text-[#080325]" : "text-[#79808A]"
+              props.value ? 'text-[#080325]' : 'text-[#79808A]'
             )}
             aria-invalid={hasError}
             aria-describedby={error ? `${props.id}-error` : undefined}
@@ -109,11 +121,11 @@ const SelectDropdown = forwardRef<HTMLSelectElement, SelectDropdownProps>(
             <option value="" disabled className="text-[#79808A]">
               {placeholder}
             </option>
-            
+
             {/* Options */}
             {options.map((option) => (
-              <option 
-                key={option.value} 
+              <option
+                key={option.value}
                 value={option.value}
                 className="text-[#080325]"
               >
@@ -121,16 +133,16 @@ const SelectDropdown = forwardRef<HTMLSelectElement, SelectDropdownProps>(
               </option>
             ))}
           </select>
-          
+
           {/* Dropdown Arrow */}
           <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
             <ChevronDown className="h-6 w-6 text-[#64748B]" />
           </div>
         </div>
-        
+
         {/* Error Message */}
         {error && (
-          <span 
+          <span
             id={`${props.id}-error`}
             className="text-[#B83F18] text-sm leading-5 font-normal"
             role="alert"
@@ -144,6 +156,6 @@ const SelectDropdown = forwardRef<HTMLSelectElement, SelectDropdownProps>(
   }
 )
 
-SelectDropdown.displayName = "SelectDropdown"
+SelectDropdown.displayName = 'SelectDropdown'
 
 export default SelectDropdown
