@@ -41,23 +41,6 @@ const Contact = () => {
           <HelpCircle className="w-8 h-8 text-[#64748B]" />
         </div>
 
-        {/* Mobile Top Navigation Bar */}
-        <div className="lg:hidden flex justify-between items-center px-4 py-3 border-b border-[#E3E8EF] bg-white">
-          <div className="flex items-center gap-2 px-3 py-1">
-            <div className="w-[13px] h-[15px] bg-[#4F46E5] rounded-sm"></div>
-            <span className="text-[#4F46E5] text-xs font-normal italic tracking-[-0.48px]">
-              Ringku
-            </span>
-          </div>
-          <button className="p-1">
-            <div className="w-5 h-5 flex flex-col justify-center space-y-1">
-              <div className="h-0.5 w-5 bg-[#64748B] rounded"></div>
-              <div className="h-0.5 w-5 bg-[#64748B] rounded"></div>
-              <div className="h-0.5 w-3 bg-[#64748B] rounded ml-2"></div>
-            </div>
-          </button>
-        </div>
-
         {/* Success Message */}
         <div className="px-4 lg:px-12 py-8 lg:py-16">
           <div className="max-w-md">
@@ -84,23 +67,6 @@ const Contact = () => {
           <Bell className="w-8 h-8 text-[#64748B]" />
         </div>
         <HelpCircle className="w-8 h-8 text-[#64748B]" />
-      </div>
-
-      {/* Mobile Top Navigation Bar */}
-      <div className="lg:hidden flex justify-between items-center px-4 py-3 border-b border-[#E3E8EF] bg-white">
-        <div className="flex items-center gap-2 px-3 py-1">
-          <div className="w-[13px] h-[15px] bg-[#4F46E5] rounded-sm"></div>
-          <span className="text-[#4F46E5] text-xs font-normal italic tracking-[-0.48px]">
-            Ringku
-          </span>
-        </div>
-        <button className="p-1">
-          <div className="w-5 h-5 flex flex-col justify-center space-y-1">
-            <div className="h-0.5 w-5 bg-[#64748B] rounded"></div>
-            <div className="h-0.5 w-5 bg-[#64748B] rounded"></div>
-            <div className="h-0.5 w-3 bg-[#64748B] rounded ml-2"></div>
-          </div>
-        </button>
       </div>
 
       {/* Main Header */}

@@ -4,12 +4,12 @@ import {
   InfoBanner,
   FilterDropdown,
   SummaryCard,
-  FinanceChartGraph
+  FinanceChartGraph,
 } from '../components'
 import {
   LifetimeIncomeIcon,
   LifetimeOutcomeIcon,
-  BonusIncomeIcon
+  BonusIncomeIcon,
 } from '../components/SummaryCard'
 import { defaultChartData } from '../components/FinanceChartGraph'
 import type { FilterOption } from '../components/FilterDropdown'
@@ -75,7 +75,7 @@ const FinanceChart = () => {
 
       {/* Mobile Header */}
       <div className="lg:hidden px-4 py-4 bg-white">
-        <h1 className="text-lg font-bold text-[#121212]">My Wallet</h1>
+        <h1 className="text-lg font-bold text-[#121212]">Finance Chart</h1>
         <p className="text-xs text-[#5B6776] mt-1">
           Keep track your financial plan
         </p>
@@ -109,7 +109,7 @@ const FinanceChart = () => {
           <h2 className="text-sm lg:text-2xl font-semibold text-[#121212] tracking-tight">
             Statistic
           </h2>
-          
+
           {/* Filter Controls */}
           <div className="flex flex-col sm:flex-row gap-3">
             <FilterDropdown
@@ -131,7 +131,10 @@ const FinanceChart = () => {
         <FinanceChartGraph
           data={chartData}
           chartType={chartType}
-          dateRange={dateRangeOptions.find(option => option.value === dateRange)?.label || 'This Year'}
+          dateRange={
+            dateRangeOptions.find((option) => option.value === dateRange)
+              ?.label || 'This Year'
+          }
         />
       </div>
 

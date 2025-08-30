@@ -5,11 +5,9 @@ import {
   Pagination,
   DownloadButton,
   TransactionTable,
-  TransactionList
+  TransactionList,
 } from '../components'
-import {
-  searchTransactions
-} from '../data/mockTransactions'
+import { searchTransactions } from '../data/mockTransactions'
 
 const RecentTransactions = () => {
   // State management
@@ -47,8 +45,12 @@ const RecentTransactions = () => {
   const handleDownload = () => {
     // In a real application, this would generate and download an Excel file
     // For now, we'll simulate the download process
-    console.log('Downloading Excel file with', totalFilteredItems, 'transactions')
-    
+    console.log(
+      'Downloading Excel file with',
+      totalFilteredItems,
+      'transactions'
+    )
+
     // You could integrate with a library like SheetJS to generate actual Excel files
     // const wb = XLSX.utils.book_new()
     // const ws = XLSX.utils.json_to_sheet(filteredTransactions)
@@ -64,23 +66,6 @@ const RecentTransactions = () => {
           <Bell className="w-8 h-8 text-[#64748B]" />
         </div>
         <HelpCircle className="w-8 h-8 text-[#64748B]" />
-      </div>
-
-      {/* Mobile Top Navigation Bar */}
-      <div className="lg:hidden flex justify-between items-center px-4 py-3 border-b border-[#E3E8EF] bg-white">
-        <div className="flex items-center gap-2 px-3 py-1">
-          <div className="w-[13px] h-[15px] bg-[#4F46E5] rounded-sm"></div>
-          <span className="text-[#4F46E5] text-xs font-normal italic tracking-[-0.48px]">
-            Ringku
-          </span>
-        </div>
-        <button className="p-1">
-          <div className="w-5 h-5 flex flex-col justify-center space-y-1">
-            <div className="h-0.5 w-5 bg-[#64748B] rounded"></div>
-            <div className="h-0.5 w-5 bg-[#64748B] rounded"></div>
-            <div className="h-0.5 w-3 bg-[#64748B] rounded ml-2"></div>
-          </div>
-        </button>
       </div>
 
       {/* Main Header */}
@@ -104,15 +89,13 @@ const RecentTransactions = () => {
       {/* Transactions Content */}
       <div className="relative">
         {/* Desktop Table View */}
-        <TransactionTable 
+        <TransactionTable
           transactions={paginatedTransactions}
           className="px-12"
         />
 
         {/* Mobile List View */}
-        <TransactionList 
-          transactions={paginatedTransactions}
-        />
+        <TransactionList transactions={paginatedTransactions} />
 
         {/* Download Button - Desktop Only */}
         <div className="hidden lg:block px-12 py-6">

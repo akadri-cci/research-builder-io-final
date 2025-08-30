@@ -16,7 +16,7 @@ const Layout = () => {
   const location = useLocation()
 
   const navigationItems = [
-    { path: '/wallet', label: 'My Wallet', icon: Wallet, active: true },
+    { path: '/wallet', label: 'My Wallet', icon: Wallet },
     { path: '/card', label: 'My Card', icon: CreditCard },
     { path: '/finance-chart', label: 'Finance Chart', icon: BarChart3 },
     {
@@ -61,6 +61,7 @@ const Layout = () => {
             <Link
               key={item.path}
               to={item.path}
+              aria-current={isActivePath(item.path) ? 'page' : undefined}
               className={`flex items-center gap-4 px-5 py-5 rounded text-sm font-semibold transition-colors ${
                 isActivePath(item.path)
                   ? 'bg-[#191A38] text-white'
@@ -82,6 +83,7 @@ const Layout = () => {
         <div className="space-y-1 border-t border-[#344055] pt-6">
           <Link
             to="/settings"
+            aria-current={isActivePath('/settings') ? 'page' : undefined}
             className={`flex items-center gap-4 px-5 py-5 rounded text-sm font-semibold transition-colors ${
               isActivePath('/settings')
                 ? 'bg-[#191A38] text-white'
@@ -130,6 +132,8 @@ const Layout = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-1"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <X className="w-5 h-5 text-[#64748B]" />
@@ -147,7 +151,7 @@ const Layout = () => {
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <div
-            className="absolute left-0 top-0 bottom-0 w-80 bg-[#080325] p-6"
+            className="absolute right-0 top-0 bottom-0 w-80 bg-[#080325] p-6 transform transition-transform duration-300 translate-x-0"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mt-16">
@@ -157,6 +161,7 @@ const Layout = () => {
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsMobileMenuOpen(false)}
+                    aria-current={isActivePath(item.path) ? 'page' : undefined}
                     className={`flex items-center gap-4 px-5 py-5 rounded text-sm font-semibold transition-colors ${
                       isActivePath(item.path)
                         ? 'bg-[#191A38] text-white'
@@ -174,10 +179,11 @@ const Layout = () => {
                 ))}
               </nav>
 
-              <div className="mt-8 border-t border-[#344055] pt-6">
+              <div className="mt-8 border-t border-[#344055] pt-6 space-y-1">
                 <Link
                   to="/settings"
                   onClick={() => setIsMobileMenuOpen(false)}
+                  aria-current={isActivePath('/settings') ? 'page' : undefined}
                   className={`flex items-center gap-4 px-5 py-5 rounded text-sm font-semibold transition-colors ${
                     isActivePath('/settings')
                       ? 'bg-[#191A38] text-white'
@@ -187,6 +193,17 @@ const Layout = () => {
                   <Settings className="w-8 h-8" />
                   <span>Settings</span>
                 </Link>
+
+                <div className="flex items-center gap-4 px-5 py-5">
+                  <img
+                    src="https://api.builder.io/api/v1/image/assets/TEMP/288838b9b89b3fbdebcdaf66f574e49c909b78a5?width=64"
+                    alt="Profile"
+                    className="w-8 h-8 rounded-full border border-[#CBCFD5]"
+                  />
+                  <span className="text-white text-base font-semibold tracking-tight">
+                    Adrian Tra
+                  </span>
+                </div>
               </div>
             </div>
           </div>

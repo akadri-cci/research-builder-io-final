@@ -2,6 +2,7 @@ import GreetingCard from '../components/GreetingCard'
 import QuickActions from '../components/QuickActions'
 import WalletCard from '../components/WalletCard'
 import CreateWalletButton from '../components/CreateWalletButton'
+import { Bell, HelpCircle } from 'lucide-react'
 
 const Wallet = () => {
   const walletData = [
@@ -57,12 +58,19 @@ const Wallet = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Desktop Top Navbar */}
+      <div className="hidden lg:flex items-center justify-between px-12 py-9 bg-white border-b border-[#E2E8F0] shadow-sm">
+        <div className="flex items-center gap-6">
+          <Bell className="w-8 h-8 text-[#64748B]" />
+        </div>
+        <HelpCircle className="w-8 h-8 text-[#64748B]" />
+      </div>
+
       {/* Main Header */}
       <div className="px-4 lg:px-12 py-4 lg:py-9 bg-white">
         <div className="max-w-sm lg:max-w-none">
           <h1 className="text-lg lg:text-3xl font-bold text-[#121212] leading-6 lg:leading-10">
-            <span className="lg:hidden">Recent Transactions</span>
-            <span className="hidden lg:block">My Wallet</span>
+            My Wallet
           </h1>
           <p className="text-xs lg:text-sm text-[#5B6776] leading-4 lg:leading-5 mt-2">
             Keep track your financial plan
