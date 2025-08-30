@@ -1,4 +1,3 @@
-import { Inbox, HelpCircle } from 'lucide-react'
 import GreetingCard from '../components/GreetingCard'
 import QuickActions from '../components/QuickActions'
 import WalletCard from '../components/WalletCard'
