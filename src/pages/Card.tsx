@@ -68,6 +68,7 @@ const Card = () => {
               </div>
               <button
                 onClick={handlePersonalizeClick}
+                aria-label="Personalize your account"
                 className="w-12 h-12 lg:w-14 lg:h-14 bg-[#4F46E5] rounded-full flex items-center justify-center hover:bg-[#4338CA] transition-colors"
               >
                 <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
