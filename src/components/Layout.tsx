@@ -16,7 +16,7 @@ const Layout = () => {
   const location = useLocation()
 
   const navigationItems = [
-    { path: '/wallet', label: 'My Wallet', icon: Wallet, active: true },
+    { path: '/wallet', label: 'My Wallet', icon: Wallet },
     { path: '/card', label: 'My Card', icon: CreditCard },
     { path: '/finance-chart', label: 'Finance Chart', icon: BarChart3 },
     {
@@ -61,6 +61,7 @@ const Layout = () => {
             <Link
               key={item.path}
               to={item.path}
+              aria-current={isActivePath(item.path) ? 'page' : undefined}
               className={`flex items-center gap-4 px-5 py-5 rounded text-sm font-semibold transition-colors ${
                 isActivePath(item.path)
                   ? 'bg-[#191A38] text-white'
@@ -82,6 +83,7 @@ const Layout = () => {
         <div className="space-y-1 border-t border-[#344055] pt-6">
           <Link
             to="/settings"
+            aria-current={isActivePath('/settings') ? 'page' : undefined}
             className={`flex items-center gap-4 px-5 py-5 rounded text-sm font-semibold transition-colors ${
               isActivePath('/settings')
                 ? 'bg-[#191A38] text-white'
@@ -130,6 +132,8 @@ const Layout = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-1"
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <X className="w-5 h-5 text-[#64748B]" />
@@ -157,6 +161,7 @@ const Layout = () => {
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsMobileMenuOpen(false)}
+                    aria-current={isActivePath(item.path) ? 'page' : undefined}
                     className={`flex items-center gap-4 px-5 py-5 rounded text-sm font-semibold transition-colors ${
                       isActivePath(item.path)
                         ? 'bg-[#191A38] text-white'
@@ -178,6 +183,7 @@ const Layout = () => {
                 <Link
                   to="/settings"
                   onClick={() => setIsMobileMenuOpen(false)}
+                  aria-current={isActivePath('/settings') ? 'page' : undefined}
                   className={`flex items-center gap-4 px-5 py-5 rounded text-sm font-semibold transition-colors ${
                     isActivePath('/settings')
                       ? 'bg-[#191A38] text-white'
