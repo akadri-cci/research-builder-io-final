@@ -61,8 +61,7 @@ const Wallet = () => {
       <div className="px-4 lg:px-12 py-4 lg:py-9 bg-white">
         <div className="max-w-sm lg:max-w-none">
           <h1 className="text-lg lg:text-3xl font-bold text-[#121212] leading-6 lg:leading-10">
-            <span className="lg:hidden">Recent Transactions</span>
-            <span className="hidden lg:block">My Wallet</span>
+            My Wallet
           </h1>
           <p className="text-xs lg:text-sm text-[#5B6776] leading-4 lg:leading-5 mt-2">
             Keep track your financial plan
